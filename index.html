@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Empire Arcana Reader</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">EA</span>
+          <div>
+            <h1 id="bookTitle">Empire Arcana</h1>
+            <p id="chapterKicker">Reader</p>
+          </div>
+        </div>
+
+        <div class="toolbar" aria-label="Reading controls">
+          <button id="decreaseFont" class="tool-button" type="button" title="Smaller text">A-</button>
+          <button id="increaseFont" class="tool-button" type="button" title="Larger text">A+</button>
+          <button id="saveBookmark" class="tool-button primary" type="button" title="Save bookmark">Bookmark</button>
+          <button id="resumeBookmark" class="tool-button" type="button" title="Resume bookmark">Resume</button>
+          <button id="importBook" class="tool-button" type="button" title="Import text">Import</button>
+          <input id="bookFile" class="visually-hidden" type="file" accept=".txt,text/plain">
+        </div>
+      </header>
+
+      <div class="reader-layout">
+        <aside class="chapter-rail" aria-label="Chapters">
+          <div class="rail-heading">Chapters</div>
+          <nav id="chapterNav" class="chapter-nav"></nav>
+        </aside>
+
+        <main class="reader-main">
+          <div class="mobile-chapter-row">
+            <select id="chapterSelect" aria-label="Chapter"></select>
+          </div>
+
+          <article class="paper-page" aria-live="polite">
+            <div class="page-edge" aria-hidden="true"></div>
+            <header class="chapter-header">
+              <p id="chapterCount" class="chapter-count"></p>
+              <h2 id="chapterTitle"></h2>
+            </header>
+            <section id="chapterBody" class="chapter-body"></section>
+          </article>
+
+          <div class="reader-actions" aria-label="Page navigation">
+            <button id="prevChapter" class="nav-button" type="button">Previous</button>
+            <div id="statusLine" class="status-line" role="status"></div>
+            <button id="nextChapter" class="nav-button" type="button">Next</button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="progress-track" aria-hidden="true">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <script src="book-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
